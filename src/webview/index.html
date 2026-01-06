@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <title>Gumball</title>
+</head>
+
+<body class="h-screen flex flex-col bg-black text-white text-sm">
+
+ <!-- Header -->
+ <header class="p-2">
+  <h1 class="title-heading">Gumball Dashboard</h1>
+  <div class="mt-3 grid grid-cols-8 gap-2">
+   <input id="label" placeholder="Label" class="col-span-2 ip" />
+   <input id="path" placeholder="Path" class="col-span-3 ip" />
+   <input id="cmd" placeholder="Command" class="font-mono col-span-2 ip" />
+   <button id="addBtn" class="col-span-1 btn">
+    Add
+   </button>
+  </div>
+ </header>
+
+ <!-- Table -->
+ <div class="flex-1 overflow-auto p-2">
+  <table class="w-full border-collapse">
+   <thead class="sticky top-0 bg-black border-b border-green-300 z-7">
+    <tr>
+     <th class="border px-3 py-1 border-green-300 text-left text-green-300">Label</th>
+     <th class="border px-3 py-1 border-green-300 text-left text-green-300">Command</th>
+     <th class="border px-3 py-1 border-green-300 text-left text-green-300">Path</th>
+     <th class="border px-3 py-1 border-green-300 text-left w-40 text-green-300">Actions</th>
+    </tr>
+   </thead>
+   <tbody id="command-table" class="bg-black"></tbody>
+  </table>
+ </div>
+
+</body>
+
+</html>

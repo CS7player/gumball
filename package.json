@@ -1,33 +1,48 @@
 {
-  "name": "gumball",
-  "displayName": "gumball",
-  "description": "To run the given cmd in specific path",
-  "version": "0.0.1",
-  "engines": {
-    "vscode": "^1.107.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [],
-  "main": "./extension.js",
-  "contributes": {
-    "commands": [{
-      "command": "gumball.helloWorld",
-      "title": "Hello World"
-    }]
-  },
-  "scripts": {
-    "lint": "eslint .",
-    "pretest": "npm run lint",
-    "test": "vscode-test"
-  },
-  "devDependencies": {
-    "@types/vscode": "^1.107.0",
-    "@types/mocha": "^10.0.10",
-    "@types/node": "22.x",
-    "eslint": "^9.39.1",
-    "@vscode/test-cli": "^0.0.12",
-    "@vscode/test-electron": "^2.5.2"
-  }
+ "name": "gumball",
+ "displayName": "Gumball",
+ "publisher": "CS7player",
+ "description": "To run the given cmd in specific path",
+ "version": "0.0.1",
+ "repository": {
+  "type": "git",
+  "url": "https://github.com/CS7player/gumball.git"
+ },
+ "engines": {
+  "vscode": "^1.107.0"
+ },
+ "icon": "gumball.png",
+ "categories": [
+  "Other"
+ ],
+ "activationEvents": [
+  "onCommand:gumball.open"
+ ],
+ "main": "./extension.js",
+ "contributes": {
+  "commands": [
+   {
+    "command": "gumball.open",
+    "title": "Gumball"
+   }
+  ]
+ },
+ "scripts": {
+  "lint": "eslint .",
+  "pretest": "npm run lint",
+  "test": "vscode-test",
+  "build": "npm run tw && node scripts/copy-webview.js",
+  "tw": "tailwindcss -c tailwind.config.js -i ./src/webview/style.css -o ./dist/webview/style.css --minify",
+  "tw:watch": "tailwindcss -c tailwind.config.js -i ./src/webview/style.css -o ./dist/webview/style.css --watch"
+ },
+ "devDependencies": {
+  "@tailwindcss/cli": "^4.1.18",
+  "@types/mocha": "^10.0.10",
+  "@types/node": "22.x",
+  "@types/vscode": "^1.107.0",
+  "@vscode/test-cli": "^0.0.12",
+  "@vscode/test-electron": "^2.5.2",
+  "eslint": "^9.39.1",
+  "tailwindcss": "^4.1.18"
+ }
 }

@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/* optional custom styles */
+@layer utilities {
+  .animate-fade {
+    animation: fadeIn 0.25s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.title-heading {
+  @apply relative text-green-300 font-bold text-xl
+         transition-[color,transform,filter] duration-300 ease-out
+         hover:text-green-400
+         hover:-translate-y-[1px]
+         hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.8)];
+}
+
+.title-heading::after {
+  content: "";
+  @apply absolute left-0 -bottom-1 h-[2px] w-0
+         bg-purple-400 transition-[width] duration-300 ease-out;
+}
+
+.title-heading:hover::after {
+  @apply w-full;
+}
+
+.ip {
+  @apply border border-green-300 rounded px-2 py-1
+         bg-black text-white
+         outline-none
+         focus:ring-1 focus:ring-purple-400
+         focus:border-purple-400;
+}
+
+.btn {
+  @apply bg-green-700 text-black px-4 py-1 rounded hover:bg-green-300 transition;
+}
