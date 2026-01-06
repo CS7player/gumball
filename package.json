@@ -1,9 +1,9 @@
 {
  "name": "gumball-cmd",
- "displayName": "Gumball",
+ "displayName": "Gumball Command Runner",
  "publisher": "chandrasekhar",
  "description": "To run the given cmd in specific path",
- "version": "0.0.2",
+ "version": "0.0.4",
  "repository": {
   "type": "git",
   "url": "https://github.com/CS7player/gumball.git"
